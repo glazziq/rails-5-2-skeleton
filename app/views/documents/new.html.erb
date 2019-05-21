@@ -1,0 +1,14 @@
+<%= content_for :nav do %>
+  <li class="nav-item" >
+    <%= link_to_unless_current(
+      'New Document', { action: :new }, { class: 'nav-link'}) do %>
+    <a class="nav-link active" href="#">New Document</a>
+  <% end %>
+  </li>
+<% end %>
+
+<h1 class="mt-3">New Document</h1>
+
+<%= render 'form', document: @document %>
+
+<%= link_to 'Back', documents_path %>

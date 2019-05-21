@@ -1,0 +1,27 @@
+<%= content_for :nav do %>
+  <li class="nav-item">
+    <%= link_to_unless_current("Document #{@document.id}",
+                               { action: :show, id: @document.id },
+                               { class: 'nav-link'}) do %>
+      <a class="nav-link active" href="#">
+        <%= "Document #{@document.id}" %>
+      </a>
+    <% end %>
+  </li>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @document.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+</p>
+
+<%== Kramdown::Document.new(@document.body).to_html %>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

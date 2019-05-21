@@ -1,0 +1,19 @@
+<%= render layout: 'layouts/application/base' do %>
+  <div class="container mt-3">
+
+    <%# nav %>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <%= link_to_unless_current(
+          'Documents', { action: :index }, { class: 'nav-link'}) do %>
+          <a class="nav-link active" href="#">Documents</a>
+        <% end %>
+      </li>
+
+      <%= yield :nav %>
+    </ul>
+    <%# / nav %>
+
+    <%= yield %>
+  </div>
+<% end %>
