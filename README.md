@@ -16,3 +16,7 @@ This is a skeleton Rails 5.2 app used as a base for various sample problems.
 - `docker-compose run --rm web bundle install`
 - `docker-compose run --rm web rails db:setup`
 - `docker-compose up`
+
+# Tests
+
+`rspec`
